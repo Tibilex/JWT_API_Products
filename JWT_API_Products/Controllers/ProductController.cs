@@ -1,7 +1,9 @@
-﻿using JWT_API_Products.Data;
+﻿using JWT_API_Products.Cache;
+using JWT_API_Products.Data;
 using JWT_API_Products.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace JWT_API_Products.Controllers
 {
@@ -11,7 +13,7 @@ namespace JWT_API_Products.Controllers
     {
         private readonly DataBaseContext _context;
         private readonly ICacheService _cacheService;
-        public ProductController(DbContextClass context, ICacheService cacheService)
+        public ProductController(DataBaseContext context, ICacheService cacheService)
         {
             _context = context;
             _cacheService = cacheService;
